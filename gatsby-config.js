@@ -1,10 +1,9 @@
 module.exports = {
-  // pathPrefix: `/img`,
   siteMetadata: {
     title: "Haitao Yue",
     description:
       "Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.",
-    siteUrl: `https://www.gatsbyjs.org`,
+    siteUrl: `https://www.yuehaitao.cn`,
     twitter: `@gatsbyjs`,
     author: "@gatsbyjs"
   },
@@ -12,12 +11,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`
+        name: `post`,
+        path: `${__dirname}/posts`
       }
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sass`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
