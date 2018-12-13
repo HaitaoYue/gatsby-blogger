@@ -1,3 +1,5 @@
+const config = require("./config/site");
+
 module.exports = {
   siteMetadata: {
     title: "Haitao Yue",
@@ -20,6 +22,13 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-json`,
+    `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: config.siteGATrackingID
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
