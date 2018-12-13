@@ -1,12 +1,42 @@
-import React from "react"
-import Layout from "../components/layout"
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import ProductHero from "../components/modules/views/Hero";
+import ProductValues from "../components/modules/views/ProductValues";
 
-export default () => (
-    <Layout>
-        <h1>Hi! I'm building a fake Gatsby site as part of a tutorial!</h1>
-        <p>
-            What do I like to do? Lots of course but definitely enjoy building
-            websites.
-        </p>
-    </Layout>
-)
+export default ({ data }) => (
+  <Layout>
+    <ProductHero />
+    <ProductValues features={data.allFeaturesJson} />
+  </Layout>
+);
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+          fields {
+            slug
+          }
+          excerpt
+        }
+      }
+    }
+    allFeaturesJson {
+      edges {
+        node {
+          id
+          title
+          description
+        }
+      }
+    }
+  }
+`;

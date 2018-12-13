@@ -1,23 +1,29 @@
 module.exports = {
-    siteMetadata: {
-        title: 'Hightall starter',
-        description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-        author: '@gatsbyjs',
+  // pathPrefix: `/img`,
+  siteMetadata: {
+    title: "Haitao Yue",
+    description:
+      "Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.",
+    siteUrl: `https://www.gatsbyjs.org`,
+    twitter: `@gatsbyjs`,
+    author: "@gatsbyjs"
+  },
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`
+      }
     },
-    plugins: [
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `src`,
-                path: `${__dirname}/src/`,
-            },
-        },
-        `gatsby-plugin-emotion`,
-        {
-            resolve: `gatsby-plugin-typography`,
-            options: {
-                pathToConfigModule: `src/utils/typography`,
-            },
-        },
-    ],
-}
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/`
+      }
+    }
+  ]
+};
