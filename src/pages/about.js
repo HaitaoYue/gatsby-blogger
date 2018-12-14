@@ -3,7 +3,9 @@ import { graphql } from "gatsby";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
-import Divider from "@material-ui/core/Divider";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import AppBar from "@material-ui/core/AppBar";
 import BioCard from "../components/bioCard";
 import theme from "../theme";
 import { Timeline, TimelineItem } from "vertical-timeline-component-for-react";
@@ -36,86 +38,93 @@ const styles = theme => ({
   }
 });
 
-const About = ({ data, classes }) => (
-  <Layout>
-    <Grid container className={classes.root}>
-      <Grid item md={2} />
-      <Grid item md={8}>
-        <Grid container justify="center">
-          <Typography variant="h3" gutterBottom>
-            About Me
-          </Typography>
+class About extends React.Component {
+  state = {
+    value: 0
+  };
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+  render() {
+    const { data, classes } = this.props;
+    const { value } = this.state;
+    return (
+      <Layout>
+        <Grid container className={classes.root}>
+          <Grid item md={2} />
+          <Grid item md={8}>
+            <Grid container justify="center">
+              <Typography variant="h3" gutterBottom>
+                About Me
+              </Typography>
+            </Grid>
+            <AppBar position="static">
+              <Tabs value={value} onChange={this.handleChange}>
+                <Tab label="Work Experience" />
+                <Tab label="Learning Experience" />
+                <Tab label="Community Experience" />
+              </Tabs>
+            </AppBar>
+            {value === 0 && (
+              <Grid container justify="center">
+                <Timeline lineColor={theme.palette.primary.main}>
+                  {data.allWorkExperienceJson.edges.map(({ node }) => (
+                    <TimelineItem
+                      key={node.id}
+                      dateText={node.date}
+                      dateInnerStyle={{
+                        background: node.dateStyle.background,
+                        color: node.dateStyle.color
+                      }}
+                    >
+                      <BioCard bio={node} />
+                    </TimelineItem>
+                  ))}
+                </Timeline>
+              </Grid>
+            )}
+            {value === 1 && (
+              <Grid container justify="center">
+                <Timeline lineColor={theme.palette.primary.main}>
+                  {data.allLearningExperienceJson.edges.map(({ node }) => (
+                    <TimelineItem
+                      key={node.id}
+                      dateText={node.date}
+                      dateInnerStyle={{
+                        background: node.dateStyle.background,
+                        color: node.dateStyle.color
+                      }}
+                    >
+                      <BioCard bio={node} />
+                    </TimelineItem>
+                  ))}
+                </Timeline>
+              </Grid>
+            )}
+            {value === 2 && (
+              <Grid container justify="center">
+                <Timeline lineColor={theme.palette.primary.main}>
+                  {data.allCommunityExperienceJson.edges.map(({ node }) => (
+                    <TimelineItem
+                      key={node.id}
+                      dateText={node.date}
+                      dateInnerStyle={{
+                        background: node.dateStyle.background,
+                        color: node.dateStyle.color
+                      }}
+                    >
+                      <BioCard bio={node} />
+                    </TimelineItem>
+                  ))}
+                </Timeline>
+              </Grid>
+            )}
+          </Grid>
         </Grid>
-        <Grid container>
-          <Typography component="h4" variant="h4" gutterBottom>
-            Work Experience
-          </Typography>
-        </Grid>
-        <Divider />
-        <Grid container justify="center">
-          <Timeline lineColor={theme.palette.primary.main}>
-            {data.allWorkExperienceJson.edges.map(({ node }) => (
-              <TimelineItem
-                key={node.id}
-                dateText={node.date}
-                dateInnerStyle={{
-                  background: node.dateStyle.background,
-                  color: node.dateStyle.color
-                }}
-              >
-                <BioCard bio={node} />
-              </TimelineItem>
-            ))}
-          </Timeline>
-        </Grid>
-        <Grid container>
-          <Typography component="h4" variant="h4" gutterBottom>
-            Learning Experience
-          </Typography>
-        </Grid>
-        <Divider />
-        <Grid container justify="center">
-          <Timeline lineColor={theme.palette.primary.main}>
-            {data.allLearningExperienceJson.edges.map(({ node }) => (
-              <TimelineItem
-                key={node.id}
-                dateText={node.date}
-                dateInnerStyle={{
-                  background: node.dateStyle.background,
-                  color: node.dateStyle.color
-                }}
-              >
-                <BioCard bio={node} />
-              </TimelineItem>
-            ))}
-          </Timeline>
-        </Grid>
-        <Grid container>
-          <Typography component="h4" variant="h4" gutterBottom>
-            Community Experience
-          </Typography>
-        </Grid>
-        <Divider />
-        <Grid container justify="center">
-          <Timeline lineColor={theme.palette.primary.main}>
-            {data.allCommunityExperienceJson.edges.map(({ node }) => (
-              <TimelineItem
-                key={node.id}
-                dateText={node.date}
-                dateInnerStyle={{
-                  background: node.dateStyle.background,
-                  color: node.dateStyle.color
-                }}
-              >
-                <BioCard bio={node} />
-              </TimelineItem>
-            ))}
-          </Timeline>
-        </Grid>
-      </Grid>
-    </Grid>
-  </Layout>
-);
+      </Layout>
+    );
+  }
+}
 
 export default withStyles(styles)(About);
 
