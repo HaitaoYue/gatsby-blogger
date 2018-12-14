@@ -10,7 +10,6 @@
     "title": "Software Engineer",
     "descriptions": ["Developing network program and NIC driver."],
     "logo": "/img/company1.jpg",
-    "url": "https://www.ibm.com/cn-zh/",
     "projects": [
       {
         "title": "Design and development of multicast streaming audio program",
@@ -51,6 +50,7 @@
       "Designed and developed a video tagging platform that greatly improved the preparation efficiency of the AI ​​training data set. ",
       "Video (Stream) AI Empowerment Platform Master Architect, this platform integrates video parsing algorithm dynamic pluggable function, computing resource scheduling, real-time alarm, historical data analysis, video front-end user interaction function."
     ],
+    "url": "https://www.ibm.com/cn-zh/",
     "logo": "/img/IBM-Logo.jpg"
   }
 ]

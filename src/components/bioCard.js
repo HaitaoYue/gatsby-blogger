@@ -118,16 +118,18 @@ class BioCard extends PureComponent {
                 <LinkIcon />
               </IconButton>
             )}
-            <IconButton
-              className={classnames(classes.expand, {
-                [classes.expandOpen]: this.state.expanded
-              })}
-              onClick={this.handleExpandClick}
-              aria-expanded={this.state.expanded}
-              aria-label="Show more"
-            >
-              <ExpandMoreIcon />
-            </IconButton>
+            {projects.length > 0 && (
+              <IconButton
+                className={classnames(classes.expand, {
+                  [classes.expandOpen]: this.state.expanded
+                })}
+                onClick={this.handleExpandClick}
+                aria-expanded={this.state.expanded}
+                aria-label="Show more"
+              >
+                <ExpandMoreIcon />
+              </IconButton>
+            )}
           </CardActions>
         )}
         {projects.length > 0 && (
