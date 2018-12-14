@@ -92,8 +92,8 @@ class BioCard extends PureComponent {
             <Typography variant="h4" component="h4">
               {bio.title}
             </Typography>
-            {bio.descriptions.map(description => (
-              <Typography component="p" gutterBottom>
+            {bio.descriptions.map((description, index) => (
+              <Typography component="p" gutterBottom key={index}>
                 {description}
               </Typography>
             ))}
@@ -116,8 +116,8 @@ class BioCard extends PureComponent {
         {projects.length > 0 && (
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
             <CardContent>
-              {projects.map(project => (
-                <React.Fragment>
+              {projects.map((project, index) => (
+                <React.Fragment key={index}>
                   <Typography
                     variant="subtitle1"
                     gutterBottom
@@ -137,13 +137,11 @@ class BioCard extends PureComponent {
                     Responsibilities
                   </Typography>
                   <Divider variant="inset" />
-                  <Typography paragraph gutterBottom>
-                    {project.responsibilities.map(responsibility => (
-                      <Typography paragraph gutterBottom>
-                        {responsibility}
-                      </Typography>
-                    ))}
-                  </Typography>
+                  {project.responsibilities.map((responsibility, index) => (
+                    <Typography paragraph gutterBottom key={index}>
+                      {responsibility}
+                    </Typography>
+                  ))}
                 </React.Fragment>
               ))}
             </CardContent>

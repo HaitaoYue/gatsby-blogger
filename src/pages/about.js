@@ -47,7 +47,7 @@ const About = ({ data, classes }) => (
           </Typography>
         </Grid>
         <Grid container>
-          <Typography component="h2" variant="display1" gutterBottom>
+          <Typography component="h4" variant="h4" gutterBottom>
             Work Experience
           </Typography>
         </Grid>
@@ -69,7 +69,7 @@ const About = ({ data, classes }) => (
           </Timeline>
         </Grid>
         <Grid container>
-          <Typography component="h2" variant="display1" gutterBottom>
+          <Typography component="h4" variant="h4" gutterBottom>
             Learning Experience
           </Typography>
         </Grid>
@@ -91,7 +91,7 @@ const About = ({ data, classes }) => (
           </Timeline>
         </Grid>
         <Grid container>
-          <Typography component="h2" variant="display1" gutterBottom>
+          <Typography component="h4" variant="h4" gutterBottom>
             Community Experience
           </Typography>
         </Grid>
