@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import { withPrefix } from "gatsby";
@@ -28,45 +28,103 @@ const styles = theme => ({
   }
 });
 
-function ProductHero(props) {
-  const { classes } = props;
-
-  return (
-    <ProductHeroLayout backgroundClassName={classes.background}>
-      {/* Increase the network loading priority of the background image. */}
-      <img
-        style={{ display: "none" }}
-        src={withPrefix("/img/banner.jpg")}
-        alt=""
-      />
-      <Typography color="inherit" align="center" variant="h2" marked="center">
-        Hightall
-      </Typography>
-      <Typography
-        color="inherit"
-        align="center"
-        variant="h5"
-        className={classes.h5}
-      >
-        Enjoy secret offers up to -70% off the best luxury hotels every Sunday.
-      </Typography>
-      <Button
-        color="secondary"
-        variant="contained"
-        size="large"
-        className={classes.button}
-        component={linkProps => (
-          <CustomLink {...linkProps} to="/contact" variant="button" />
-        )}
-      >
-        Register
-      </Button>
-      <Typography variant="body2" color="inherit" className={classes.more}>
-        Discover the experience
-      </Typography>
-    </ProductHeroLayout>
-  );
+class ProductHero extends PureComponent {
+  componentDidMount() {
+    // anime({
+    //     targets: '#cssSelector .el',
+    //     translateX: 250
+    // });
+  }
+  render() {
+    const { classes } = this.props;
+    return (
+      <ProductHeroLayout backgroundClassName={classes.background}>
+        {/* Increase the network loading priority of the background image. */}
+        <img
+          style={{ display: "none" }}
+          src={withPrefix("/img/banner.jpg")}
+          alt=""
+        />
+        <Typography color="inherit" align="center" variant="h2" marked="center">
+          Hightall
+        </Typography>
+        <Typography
+          color="inherit"
+          align="center"
+          variant="h5"
+          className={classes.h5}
+        >
+          Enjoy secret offers up to -70% off the best luxury hotels every
+          Sunday.
+        </Typography>
+        <Button
+          color="secondary"
+          variant="contained"
+          size="large"
+          className={classes.button}
+          component={linkProps => (
+            <CustomLink {...linkProps} to="/contact" variant="button" />
+          )}
+        >
+          Register
+        </Button>
+        <Typography variant="body2" color="inherit" className={classes.more}>
+          Discover the experience
+        </Typography>
+      </ProductHeroLayout>
+    );
+  }
 }
+
+//
+// function ProductHero(props) {
+//   const { classes } = props;
+//
+//   anime({
+//     targets: '#cssSelector .el',
+//     translateX: 250
+//   });
+//   return (
+//     <ProductHeroLayout backgroundClassName={classes.background}>
+//       {/* Increase the network loading priority of the background image. */}
+//       <img
+//         style={{ display: "none" }}
+//         src={withPrefix("/img/banner.jpg")}
+//         alt=""
+//       />
+//       <Typography color="inherit" align="center" variant="h2" marked="center">
+//         Hightall
+//       </Typography>
+//         <div id="cssSelector">
+//             <div className="line">
+//                 <div className="square el" />
+//             </div>
+//         </div>
+//       {/*<Typography*/}
+//         {/*color="inherit"*/}
+//         {/*align="center"*/}
+//         {/*variant="h5"*/}
+//         {/*className={classes.h5}*/}
+//       {/*>*/}
+//         {/*Enjoy secret offers up to -70% off the best luxury hotels every Sunday.*/}
+//       {/*</Typography>*/}
+//       <Button
+//         color="secondary"
+//         variant="contained"
+//         size="large"
+//         className={classes.button}
+//         component={linkProps => (
+//           <CustomLink {...linkProps} to="/contact" variant="button" />
+//         )}
+//       >
+//         Register
+//       </Button>
+//       <Typography variant="body2" color="inherit" className={classes.more}>
+//         Discover the experience
+//       </Typography>
+//     </ProductHeroLayout>
+//   );
+// }
 
 ProductHero.propTypes = {
   classes: PropTypes.object.isRequired

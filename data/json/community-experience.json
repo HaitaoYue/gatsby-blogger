@@ -1,0 +1,16 @@
+[
+  {
+    "index": 1,
+    "date": "2017/1 - Now",
+    "dateStyle": {
+      "background": "#ff3366",
+      "color": "#fff"
+    },
+    "location": "Hyperledger",
+    "title": "Maintainer of Cello",
+    "descriptions": [
+      "As a community maintainer, design & development, determine the future direction of development."
+    ],
+    "logo": "/img/hyperledger.png"
+  }
+]

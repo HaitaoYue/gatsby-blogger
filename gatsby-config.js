@@ -14,7 +14,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `post`,
-        path: `${__dirname}/posts`
+        path: `${__dirname}/data/markdown/posts`
       }
     },
     `gatsby-transformer-remark`,
@@ -32,7 +32,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/data/`
+        name: `json`,
+        path: `${__dirname}/data/json`
       }
     }
   ]

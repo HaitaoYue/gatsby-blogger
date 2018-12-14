@@ -1,0 +1,54 @@
+[
+  {
+    "index": 3,
+    "date": "2006/9-2008/12",
+    "dateStyle": {
+      "background": "#28282a",
+      "color": "#fff"
+    },
+    "location": "Beijing Yameng Foundation Optoelectronics Technology Co., Ltd",
+    "title": "Software Engineer",
+    "descriptions": ["Developing network program and NIC driver."],
+    "logo": "/img/company1.jpg",
+    "projects": [
+      {
+        "title": "Design and development of multicast streaming audio program",
+        "description": "linux environment, ubuntu(Software)LAN multi-cast streaming audio program, this application supports multi-user authentication and real playing and function of selecting the channel.",
+        "responsibilities": [
+          "Responsibility for client application design and development, implement tcp and udp transfer protocol of client. using IPC mechanism in audio data transmission of local area, finally complete the multicast streaming audio client application program."
+        ]
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "date": "2008/12-20010/8",
+    "dateStyle": {
+      "background": "#0170B2",
+      "color": "#fff"
+    },
+    "location": "Beijing Zhongzhiheda Information Technology Co., Ltd",
+    "title": "Embedded Software Engineer",
+    "descriptions": [
+      "Responsible for developing VTL of virtual tape library,the driver of compress card, migrating the product from ARM based platform to Powerpc based platform. and global planning and optimization of NAS file system.",
+      "Design and develop the driver of the next generation compress card that improves the compress ratio and speed impressively "
+    ],
+    "logo": "/img/soul-logo.png"
+  },
+  {
+    "index": 1,
+    "date": "2010/8-Now",
+    "dateStyle": {
+      "background": "#2376BC",
+      "color": "#fff"
+    },
+    "location": "IBM China Research Library",
+    "title": "Chief Engineer",
+    "descriptions": [
+      "Responsible for the development of user operating systems based on open source cloud openstack.",
+      "Designed and developed a video tagging platform that greatly improved the preparation efficiency of the AI ​​training data set. ",
+      "Video (Stream) AI Empowerment Platform Master Architect, this platform integrates video parsing algorithm dynamic pluggable function, computing resource scheduling, real-time alarm, historical data analysis, video front-end user interaction function."
+    ],
+    "logo": "/img/IBM-Logo.jpg"
+  }
+]

@@ -1,6 +1,7 @@
 ---
 title: "Hello World"
 date: "2018-12-13"
+image: "/img/banner.jpg"
 ---
 
 # Hello World!

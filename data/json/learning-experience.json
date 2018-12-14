@@ -1,0 +1,14 @@
+[
+  {
+    "index": 1,
+    "date": "2002/9-2006/7",
+    "dateStyle": {
+      "background": "#ff3366",
+      "color": "#fff"
+    },
+    "location": "China Three Gorges University",
+    "title": "Bachelor",
+    "descriptions": ["Majoring in computer science and technology"],
+    "logo": "/img/school-logo.png"
+  }
+]
