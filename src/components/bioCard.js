@@ -11,6 +11,7 @@ import IconButton from "@material-ui/core/IconButton";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Collapse from "@material-ui/core/Collapse";
 import Divider from "@material-ui/core/Divider";
+import { withPrefix } from "gatsby";
 
 const styles = theme => ({
   root: {
@@ -77,7 +78,7 @@ class BioCard extends PureComponent {
               className={classes.media}
               alt="image"
               height="160"
-              image={bio.logo}
+              image={withPrefix(bio.logo)}
             />
           )}
           <CardContent>

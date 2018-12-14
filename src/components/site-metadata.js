@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import { withPrefix } from "gatsby";
 
 const SiteMetadata = ({ title }) => (
   <Helmet defaultTitle={title} titleTemplate={`%s | ${title}`}>
@@ -8,6 +9,7 @@ const SiteMetadata = ({ title }) => (
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <link rel="shortcut icon" href={withPrefix("/img/favicon.ico")} />
     <meta name="docsearch:version" content="2.0" />
     <meta
       name="viewport"
