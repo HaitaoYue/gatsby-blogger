@@ -147,6 +147,7 @@ export const query = graphql`
           }
           title
           location
+          url
           descriptions
           logo
           projects {
@@ -169,6 +170,7 @@ export const query = graphql`
           }
           title
           location
+          url
           descriptions
           logo
         }
@@ -186,6 +188,7 @@ export const query = graphql`
           }
           title
           location
+          url
           descriptions
           logo
         }

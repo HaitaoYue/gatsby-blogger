@@ -10,6 +10,7 @@
     "title": "Software Engineer",
     "descriptions": ["Developing network program and NIC driver."],
     "logo": "/img/company1.jpg",
+    "url": "https://www.ibm.com/cn-zh/",
     "projects": [
       {
         "title": "Design and development of multicast streaming audio program",
@@ -29,6 +30,7 @@
     },
     "location": "Beijing Zhongzhiheda Information Technology Co., Ltd",
     "title": "Embedded Software Engineer",
+    "url": "http://www.soul.com.cn/",
     "descriptions": [
       "Responsible for developing VTL of virtual tape library,the driver of compress card, migrating the product from ARM based platform to Powerpc based platform. and global planning and optimization of NAS file system.",
       "Design and develop the driver of the next generation compress card that improves the compress ratio and speed impressively "

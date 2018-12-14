@@ -10,8 +10,10 @@ import classnames from "classnames";
 import IconButton from "@material-ui/core/IconButton";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Collapse from "@material-ui/core/Collapse";
+import LinkIcon from "@material-ui/icons/Link";
 import Divider from "@material-ui/core/Divider";
 import { withPrefix } from "gatsby";
+import CustomLink from "./modules/next/Link";
 
 const styles = theme => ({
   root: {
@@ -99,8 +101,23 @@ class BioCard extends PureComponent {
             ))}
           </CardContent>
         </CardActionArea>
-        {projects.length > 0 && (
+        {(projects.length > 0 || bio.url) && (
           <CardActions>
+            {bio.url && (
+              <IconButton
+                aria-label="Share"
+                component={linkProps => (
+                  <CustomLink
+                    {...linkProps}
+                    href={bio.url}
+                    target="_blank"
+                    variant="button"
+                  />
+                )}
+              >
+                <LinkIcon />
+              </IconButton>
+            )}
             <IconButton
               className={classnames(classes.expand, {
                 [classes.expandOpen]: this.state.expanded
