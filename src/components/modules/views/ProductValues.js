@@ -53,11 +53,6 @@ function ProductValues(props) {
           {features.edges.map(({ node }) => (
             <Grid item xs={12} md={4} key={node.id}>
               <div className={classes.item}>
-                {/*<img*/}
-                {/*className={classes.image}*/}
-                {/*src="/static/themes/onepirate/productValues1.svg"*/}
-                {/*alt="suitcase"*/}
-                {/*/>*/}
                 <Typography variant="h6" className={classes.title}>
                   {node.title}
                 </Typography>

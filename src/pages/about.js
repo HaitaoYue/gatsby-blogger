@@ -6,6 +6,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import AppBar from "@material-ui/core/AppBar";
+import { withPrefix } from "gatsby";
 import BioCard from "../components/bioCard";
 import theme from "../theme";
 import { Timeline, TimelineItem } from "vertical-timeline-component-for-react";
@@ -35,6 +36,11 @@ const styles = theme => ({
   },
   media: {
     objectFit: "cover"
+  },
+  curvyLines: {
+    pointerEvents: "none",
+    position: "absolute",
+    top: -180
   }
 });
 
@@ -50,6 +56,11 @@ class About extends React.Component {
     const { value } = this.state;
     return (
       <Layout>
+        <img
+          src={withPrefix("/img/productCurvyLines.png")}
+          className={classes.curvyLines}
+          alt="curvy lines"
+        />
         <Grid container className={classes.root}>
           <Grid item md={2} />
           <Grid item md={8}>
