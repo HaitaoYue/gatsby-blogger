@@ -34,6 +34,33 @@
       "Responsible for developing VTL of virtual tape library,the driver of compress card, migrating the product from ARM based platform to Powerpc based platform. and global planning and optimization of NAS file system.",
       "Design and develop the driver of the next generation compress card that improves the compress ratio and speed impressively "
     ],
+    "projects": [
+      {
+        "title": "Migrating Linux kernel 2.6.32 to AMCC 440 board",
+        "description": "Linux envrionment, ubuntu(Software)Migrating Linux kernel 2.6.32 to AMCC 440 board. Based on this work, the maximum memory is greatly increased from 2G to 3G and the performance is significantly improved. To help the administrator user can get more information about VTL server, I modify bootloader (change redboot to uboot) and design nvram application software.",
+        "responsibilities": [
+          "I sucessfully migrate linux kernel(2.6.32) to AMCC 440 board, and it's be used in the mass production of new products VTL1000 series.",
+          "Redesign and modify the application nvram, I successfully implement the interaction of information between VTL and manager."
+        ]
+      },
+      {
+        "title": "VTL core scst code upgrades and migrations, data compression plate design and development",
+        "description": "linux envrionmen, ubuntu(Software)To increase the efficiency and speed of the compress card, the company develop new compress card product. By upgrading Linux kernel scst to the new version 2.0.0 and applying it on Linux kernel 2.6.32 on Xilinx FPGA compress card, we realize an novel hardware based compress technology that is much more efficient than traditional software based compress technologies.",
+        "responsibilities": [
+          "By implement the latest code of scst on Linux kernel 2.6.32, I successfully develop the core functions of a new VTL1000 products.",
+          "I design and develop the driver of the next generation compress card that improves the compress ratio and speed impressively."
+        ]
+      },
+      {
+        "title": "Design and development of VTL's nas function blocks",
+        "description": "linux envrionment, ubuntu(Software)To satisfy the requirements of our clients, I add nas module on VTL1000 series product. The test result shows that my designed architecture (I use device-mapper in kernel and dmsetup and samba architecture in application layer. ) can increase the transmission speed of the system to 20M.",
+        "responsibilities": [
+          "I successfully optimize splice based on Linux kernel module device-mapper. Based on my optimization work, the transmission speed is significantly increased from 10M to 20M.",
+          "I design and implement a novel rootfs file system that can easily upgrade Kernel and back-stage management.",
+          "By designing and developing the interface for CGI back-stage user software, I implement more friendly system management for our clients."
+        ]
+      }
+    ],
     "logo": "/img/soul-logo.png"
   },
   {
@@ -51,6 +78,15 @@
       "Video (Stream) AI Empowerment Platform Master Architect, this platform integrates video parsing algorithm dynamic pluggable function, computing resource scheduling, real-time alarm, historical data analysis, video front-end user interaction function."
     ],
     "url": "https://www.ibm.com/cn-zh/",
+    "projects": [
+      {
+        "title": "China Mobile C-RAN project",
+        "description": "Linux envrionment, ubuntu(Software)The object of this project is to develop the first IT-based cloud base station pool that support multiple mobile communication standards (GSM, TD-SCDMA, TD-LTE and LTE-Advanced)",
+        "responsibilities": [
+          "Responsible for leading the FPGA card driver and hardware abstraction layer development in the joint wireless network cloud project (C-RAN) with mobile operators (such as China Mobile). The developed system was selected to represent IBM Research to show a demo in the most famous mobile communication industrial conference Mobile World Congress 2011."
+        ]
+      }
+    ],
     "logo": "/img/IBM-Logo.jpg"
   }
 ]
