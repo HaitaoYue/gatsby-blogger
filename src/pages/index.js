@@ -25,6 +25,7 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             image
+            thumb
           }
           fields {
             slug
