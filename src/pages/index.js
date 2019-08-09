@@ -2,11 +2,11 @@ import React from "react";
 import { graphql } from "gatsby";
 import "assets/scss/material-kit-react.scss?v=1.7.0";
 import Layout from "components/layout";
-import LandingPage from "pages/LandingPage/LandingPage";
+import LandingPage from "components/LandingPage/LandingPage";
 
 export default ({ data }) => (
   <Layout>
-    <LandingPage data={data} />
+    <LandingPage posts={data.allMarkdownRemark.edges || []} />
   </Layout>
 );
 

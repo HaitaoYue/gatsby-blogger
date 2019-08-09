@@ -25,17 +25,19 @@ const Layout = ({ children, headerColor = "transparent" }) => (
     }) => (
       <React.Fragment>
         <SiteMetadata title={title} />
-        <Header
-          color={headerColor}
-          routes={[]}
-          brand="Haitao's Blog"
-          rightLinks={<HeaderLinks />}
-          fixed
-          changeColorOnScroll={{
-            height: 400,
-            color: "white"
-          }}
-        />
+        {typeof window !== "undefined" && (
+          <Header
+            color={headerColor}
+            routes={[]}
+            brand="Haitao's Blog"
+            rightLinks={<HeaderLinks />}
+            fixed
+            changeColorOnScroll={{
+              height: 400,
+              color: "white"
+            }}
+          />
+        )}
         {children}
         <Footer />
       </React.Fragment>

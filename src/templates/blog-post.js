@@ -13,7 +13,7 @@ const BlogPost = ({ data, classes }) => {
   const post = data.markdownRemark;
   return (
     <Layout headerColor={post.frontmatter.image ? "transparent" : "info"}>
-      {post.frontmatter.image ? (
+      {post.frontmatter.image && typeof window !== "undefined" ? (
         <Parallax small filter image={post.frontmatter.image} />
       ) : (
         <div className={classes.space50} />

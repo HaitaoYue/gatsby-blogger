@@ -11,7 +11,9 @@ import SectionPostList from "./SectionPostList";
 const Posts = ({ pageContext, classes }) => {
   return (
     <Layout>
-      <Parallax small filter image={postsBg} />
+      {typeof window !== "undefined" && (
+        <Parallax small filter image={postsBg} />
+      )}
       <div className={classNames(classes.main, classes.mainRaised)}>
         <SectionPostList pageContext={pageContext} />
       </div>
