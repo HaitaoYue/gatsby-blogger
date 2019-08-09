@@ -1,56 +1,31 @@
 import React from "react";
+import classNames from "classnames";
 import { graphql } from "gatsby";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
-import Layout from "../components/layout";
+import withStyles from "@material-ui/core/styles/withStyles";
+import Layout from "components/layout";
+import "assets/scss/material-kit-react.scss?v=1.7.0";
+import Parallax from "components/Parallax/Parallax.jsx";
+import profilePageStyle from "assets/jss/material-kit-react/views/profilePage.jsx";
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    marginTop: 20
-  },
-  paper: {
-    height: 140,
-    width: 100
-  },
-  content: {
-    width: "100%"
-  },
-  control: {
-    padding: theme.spacing.unit * 2
-  }
-});
+import SectionPost from "./SectionPost";
 
 const BlogPost = ({ data, classes }) => {
   const post = data.markdownRemark;
   return (
-    <Layout>
-      <Grid container className={classes.root} spacing={16}>
-        <Grid item xs={3} />
-        <Grid item xs={6}>
-          <Grid container>
-            <Grid container justify="center" alignItems="center">
-              <Typography component="h2" variant="h1" gutterBottom>
-                {post.frontmatter.title}
-              </Typography>
-            </Grid>
-            <Grid
-              container
-              justify="center"
-              alignItems="center"
-              direction="row"
-            >
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+    <Layout headerColor={post.frontmatter.image ? "transparent" : "info"}>
+      {post.frontmatter.image ? (
+        <Parallax small filter image={post.frontmatter.image} />
+      ) : (
+        <div className={classes.space50} />
+      )}
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <SectionPost post={post} />
+      </div>
     </Layout>
   );
 };
 
-export default withStyles(styles)(BlogPost);
+export default withStyles(profilePageStyle)(BlogPost);
 
 export const query = graphql`
   query($slug: String!) {
@@ -58,6 +33,8 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date
+        image
       }
     }
   }

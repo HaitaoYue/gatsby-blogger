@@ -9,6 +9,10 @@ const SiteMetadata = ({ title }) => (
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+      rel="stylesheet"
+    />
     <link rel="shortcut icon" href={withPrefix("/img/favicon.ico")} />
     <meta name="docsearch:version" content="2.0" />
     <meta

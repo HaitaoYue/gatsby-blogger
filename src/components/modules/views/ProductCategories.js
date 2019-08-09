@@ -87,7 +87,6 @@ const styles = theme => ({
 
 function ProductCategories(props) {
   const { classes, posts } = props;
-  console.log(posts);
   let index = 0;
   let percentArr = [];
   const images = posts

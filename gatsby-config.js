@@ -1,4 +1,5 @@
 const config = require("./config/site");
+const path = require("path");
 
 module.exports = {
   siteMetadata: {
@@ -49,6 +50,21 @@ module.exports = {
       options: {
         name: `json`,
         path: `${__dirname}/data/json`
+      }
+    },
+    {
+      resolve: "gatsby-source-github-repo",
+      options: {
+        repoUrl: "https://github.com/hyperledger/cello"
+      }
+    },
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        src: path.join(__dirname, "src"),
+        assets: path.join(__dirname, "src/assets"),
+        pages: path.join(__dirname, "src/pages"),
+        components: path.join(__dirname, "src/components")
       }
     }
   ]

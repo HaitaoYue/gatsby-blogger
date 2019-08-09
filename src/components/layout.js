@@ -1,10 +1,11 @@
 import React from "react";
-import { css } from "@emotion/core";
 import { graphql, StaticQuery } from "gatsby";
 import SiteMetadata from "./site-metadata";
-import AppAppBar from "./modules/views/AppAppBar";
+import Header from "components/Header/Header.jsx";
+import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import Footer from "components/Footer/Footer.jsx";
 
-const Layout = ({ children }) => (
+const Layout = ({ children, headerColor = "transparent" }) => (
   <StaticQuery
     query={graphql`
       query SiteMetadata {
@@ -24,15 +25,19 @@ const Layout = ({ children }) => (
     }) => (
       <React.Fragment>
         <SiteMetadata title={title} />
-        <AppAppBar title={title} />
-        <div
-          css={css`
-            margin: 0 auto;
-            max-width: 900px;
-          `}
-        >
-          {children}
-        </div>
+        <Header
+          color={headerColor}
+          routes={[]}
+          brand="Haitao's Blog"
+          rightLinks={<HeaderLinks />}
+          fixed
+          changeColorOnScroll={{
+            height: 400,
+            color: "white"
+          }}
+        />
+        {children}
+        <Footer />
       </React.Fragment>
     )}
   />

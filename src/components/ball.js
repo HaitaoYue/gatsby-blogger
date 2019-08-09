@@ -3,7 +3,6 @@ import anime from "animejs";
 
 class Ball extends PureComponent {
   componentDidMount() {
-    console.log("ball");
     anime({
       targets: "#cssSelector .el",
       translateX: 250
