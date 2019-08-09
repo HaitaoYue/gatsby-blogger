@@ -31,21 +31,21 @@ import GridItem from "components/Grid/GridItem.jsx";
 import InfoArea from "components/InfoArea/InfoArea.jsx";
 
 import productStyle from "assets/jss/material-kit-react/views/landingPageSections/productStyle.jsx";
+import openstackImg from "assets/img/openstack.png";
+import hyperledgerImg from "assets/img/hyperledger.png";
 
-class ProductSection extends React.Component {
+class TechSection extends React.Component {
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.section}>
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={8}>
-            <h2 className={classes.title}>Let{"'"}s talk product</h2>
+            <h2 className={classes.title}>Personal technology stack</h2>
             <h5 className={classes.description}>
-              This is the paragraph where you can write more details about your
-              product. Keep you user engaged by providing meaningful
-              information. Remember that by this time, the user is curious,
-              otherwise he wouldn{"'"}t scroll to get here. Add a button if you
-              want the user to see more.
+              Linux embedded development, Web font and back development, Mobile
+              application development, System operation and maintenance
+              monitoring automatic deployment.
             </h5>
           </GridItem>
         </GridContainer>
@@ -53,28 +53,30 @@ class ProductSection extends React.Component {
           <GridContainer>
             <GridItem xs={12} sm={12} md={4}>
               <InfoArea
-                title="Free Chat"
-                description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-                icon={Chat}
-                iconColor="info"
+                title="OpenStack"
+                description="
+                Customized the user control panel of the company cloud platform based on the depth of the OpenStack horizon, greatly improving the user experience and speed.
+                "
+                image={openstackImg}
                 vertical
               />
             </GridItem>
             <GridItem xs={12} sm={12} md={4}>
               <InfoArea
-                title="Verified Users"
-                description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-                icon={VerifiedUser}
-                iconColor="success"
-                vertical
-              />
-            </GridItem>
-            <GridItem xs={12} sm={12} md={4}>
-              <InfoArea
-                title="Fingerprint"
-                description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-                icon={Fingerprint}
-                iconColor="danger"
+                title="Hyperledger"
+                description={
+                  <span>
+                    Project maintainer of cello which is the open source baas
+                    (BlockChain As a Service) project in hyperledger,{" "}
+                    <a
+                      href="https://github.com/hyperledger/cello"
+                      target="_blank"
+                    >
+                      Github Link
+                    </a>
+                  </span>
+                }
+                image={hyperledgerImg}
                 vertical
               />
             </GridItem>
@@ -85,8 +87,8 @@ class ProductSection extends React.Component {
   }
 }
 
-ProductSection.propTypes = {
+TechSection.propTypes = {
   classes: PropTypes.object
 };
 
-export default withStyles(productStyle)(ProductSection);
+export default withStyles(productStyle)(TechSection);

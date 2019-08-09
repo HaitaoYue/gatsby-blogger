@@ -32,7 +32,7 @@ class TeamSection extends React.Component {
     );
     return (
       <div className={classes.section}>
-        <h2 className={classes.title}>Here is our team</h2>
+        <h2 className={classes.title}>Recent Posts</h2>
         <div>
           <GridContainer>
             {posts.map(post => (

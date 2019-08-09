@@ -17,7 +17,7 @@ import Parallax from "components/Parallax/Parallax.jsx";
 import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
 
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.jsx";
+import TechSection from "./Sections/TechSection.jsx";
 import TeamSection from "./Sections/TeamSection.jsx";
 
 class LandingPage extends React.Component {
@@ -30,24 +30,15 @@ class LandingPage extends React.Component {
             <div className={classes.container}>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
-                  <h1 className={classes.title}>Your Story Starts With Us.</h1>
+                  <h1 className={classes.title}>Passionate</h1>
                   <h4>
-                    Every landing page needs a small description after the big
-                    bold title, that{"'"}s why we added this text here. Add here
-                    all the information that can make you or your product create
-                    the first impression.
+                    I like all kinds of new technologies and are full of
+                    curiosity about new dynamic moments in the field of
+                    technology.
                   </h4>
+                  <h4>Love life, love family, love technology.</h4>
+                  <h3>天道酬勤</h3>
                   <br />
-                  <Button
-                    color="danger"
-                    size="lg"
-                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fas fa-play" />
-                    Watch video
-                  </Button>
                 </GridItem>
               </GridContainer>
             </div>
@@ -55,7 +46,7 @@ class LandingPage extends React.Component {
         )}
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            <ProductSection />
+            <TechSection />
             <TeamSection posts={posts} />
           </div>
         </div>

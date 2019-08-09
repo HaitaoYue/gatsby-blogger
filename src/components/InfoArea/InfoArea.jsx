@@ -39,7 +39,10 @@ function InfoArea({ ...props }) {
   return (
     <div className={classes.infoArea}>
       <div className={iconWrapper}>
-        <props.icon className={iconClasses} />
+        {props.icon && <props.icon className={iconClasses} />}
+        {props.image && (
+          <img src={props.image} alt={""} className={iconClasses} />
+        )}
       </div>
       <div className={classes.descriptionWrapper}>
         <h4 className={classes.title}>{title}</h4>
