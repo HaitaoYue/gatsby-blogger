@@ -9,10 +9,9 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-import { Home, Apps, Pages, Person } from "@material-ui/icons";
+import { Home, Pages, Person } from "@material-ui/icons";
 
 // core components
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
 import headerLinksStyle from "assets/jss/material-kit-react/components/headerLinksStyle.jsx";

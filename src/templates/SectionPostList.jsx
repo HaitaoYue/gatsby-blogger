@@ -77,6 +77,7 @@ class SectionPostList extends React.Component {
           to: pageNumber > 1 ? `/blogs/${pageNumber}` : "/blogs/"
         });
       }
+      return pageNumber;
     });
     pages.push({
       text: "NEXT",

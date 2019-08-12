@@ -12,8 +12,8 @@ class About extends React.Component {
     this.setState({ value });
   };
   render() {
-    const { data, classes } = this.props;
-    const { value } = this.state;
+    // const { data, classes } = this.props;
+    // const { value } = this.state;
     return (
       <Layout>
         <ProfilePage />
